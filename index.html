@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wyszukiwarka szkół podstawowych</title>
+    <meta name="description" content="Wyszukiwarka szkół podstawowych w Krakowie i Warszawie — filtry: dzielnica, status, pedagogika, profil językowy, integracja." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <a class="logo" href="https://app.boopy.pl" target="_blank" rel="noopener">
+          <img src="/boopy-logo.png" alt="boopy" width="1276" height="369" />
+        </a>
+        <h1>Wyszukiwarka szkół podstawowych</h1>
+        <p class="lead">Znajdź szkołę w Krakowie lub Warszawie po nazwie, adresie i profilu.</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <form id="filters" class="filters" role="search" autocomplete="off">
+        <label class="field field--search">
+          <span class="field__label">Szukaj po nazwie lub adresie</span>
+          <input id="q" name="q" type="search" placeholder="np. Montessori, ul. Mokotowska" />
+        </label>
+
+        <details class="more" id="more" open>
+          <summary>Filtry <span id="active-count" class="badge" hidden></span></summary>
+          <div class="grid">
+            <label class="field"><span class="field__label">Miasto</span><select name="miasto"></select></label>
+            <label class="field"><span class="field__label">Dzielnica</span><select name="dzielnica"></select></label>
+            <label class="field"><span class="field__label">Status</span><select name="status"></select></label>
+            <label class="field"><span class="field__label">Pedagogika</span><select name="pedagogika"></select></label>
+            <label class="field"><span class="field__label">Profil językowy</span><select name="jezykowy"></select></label>
+            <label class="field"><span class="field__label">Integracja / kształcenie specjalne</span><select name="specjalne"></select></label>
+            <label class="field"><span class="field__label">Wyznaniowa</span><select name="wyznaniowa"></select></label>
+          </div>
+        </details>
+
+        <div class="toolbar">
+          <p id="count" class="count" aria-live="polite">Wczytywanie…</p>
+          <button type="button" id="clear" class="btn-clear">Wyczyść filtry</button>
+        </div>
+      </form>
+
+      <ul id="results" class="results"></ul>
+
+      <aside class="promo">
+        <img class="promo__logo" src="/boopy-logo.png" alt="" width="1276" height="369" />
+        <p class="promo__title">Zanim wybierzesz szkołę, poznaj profil swojego dziecka</p>
+        <a class="promo__btn" href="https://app.boopy.pl" target="_blank" rel="noopener">Przejdź do app.boopy.pl</a>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        Dane: Rejestr Szkół i Placówek Oświatowych (RSPO), stan na 18.10.2026. Pedagogika na podstawie nazwy szkoły
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
